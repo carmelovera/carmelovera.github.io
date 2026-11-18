@@ -4,304 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Carmelo Vera | Software Developer</title>
-<meta name="description" content="Carmelo Vera - Software developer in Washington state. Web development, WordPress, accessibility and SEO. Portfolio, projects and resume.">
+<meta name="description" content="Carmelo Vera - Software developer in Seattle, WA. Web development, WordPress, accessibility and SEO. Portfolio, projects and contact.">
 
 <!-- Social preview (LinkedIn, etc.) - we will add a preview image later -->
 <meta property="og:title" content="Carmelo Vera | Software Developer">
-<meta property="og:description" content="Portfolio, projects and resume of Carmelo Vera.">
+<meta property="og:description" content="Portfolio and projects of Carmelo Vera.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://carmelovera.com/">
+<link rel="canonical" href="https://carmelovera.com/">
 
-<!-- Google Analytics 4 goes here (step 5) -->
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0G9DM96W0S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0G9DM96W0S');
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 
-<style>
-  :root {
-    --bg: #f7f7f7;
-    --card: #ececec;
-    --card-hover: #e4e4e4;
-    --text: #101010;
-    --muted: #555;
-    --accent: #e5322d;
-    --line: #dcdcdc;
-    --radius: 10px;
-    --nav-h: 64px;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: inherit; }
-  .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
-
-  /* ---------- NAV (tabs) ---------- */
-  header {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(247,247,247,0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid transparent;
-    transition: border-color .2s;
-  }
-  header.scrolled { border-bottom-color: var(--line); }
-  .nav {
-    height: var(--nav-h);
-    display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  }
-  .logo { font-weight: 600; text-decoration: none; white-space: nowrap; }
-  .logo span { color: var(--accent); }
-  .tabs {
-    display: flex; gap: 4px; list-style: none;
-    overflow-x: auto; scrollbar-width: none;
-  }
-  .tabs::-webkit-scrollbar { display: none; }
-  .tabs a {
-    display: block; padding: 6px 12px; border-radius: 999px;
-    font-size: 14px; font-weight: 500; color: var(--muted);
-    text-decoration: none; white-space: nowrap;
-    transition: background .15s, color .15s;
-  }
-  .tabs a:hover { background: var(--card); color: var(--text); }
-  .tabs a.active { background: var(--text); color: #fff; }
-
-  section { padding: 72px 0 24px; scroll-margin-top: var(--nav-h); }
-  h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 20px; }
-  p + p { margin-top: 12px; }
-  .muted { color: var(--muted); }
-
-  /* ---------- HERO / ABOUT ---------- */
-  .hero { display: flex; align-items: center; gap: 48px; padding-top: 56px; }
-  .hero-text { flex: 1; }
-  .hero h1 { font-size: 52px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 20px; }
-  .hero h1 .hi { color: var(--accent); }
-  .hero p a { text-underline-offset: 3px; }
-  .avatar {
-    width: 190px; height: 190px; border-radius: 50%; flex-shrink: 0;
-    background: #101010; color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 56px; font-weight: 800; letter-spacing: -0.03em;
-  }
-  .avatar span { color: var(--accent); }
-  .avatar.photo { object-fit: cover; background: #fff; box-shadow: 0 0 0 4px #fff, 0 0 0 5px var(--line), 0 12px 30px -12px rgba(0,0,0,.35); }
-  .socials { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
-  .icon-btn {
-    width: 38px; height: 38px; border-radius: 8px;
-    background: var(--text); color: #fff;
-    display: grid; place-items: center; text-decoration: none;
-    transition: transform .15s, background .15s;
-  }
-  .icon-btn:hover { transform: translateY(-2px); background: var(--accent); }
-  .icon-btn svg { width: 20px; height: 20px; fill: currentColor; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 8px 16px; height: 38px; border-radius: 8px;
-    font-size: 14px; font-weight: 600; text-decoration: none;
-    border: 1.5px solid var(--text); transition: background .15s, color .15s;
-  }
-  .btn:hover { background: var(--text); color: #fff; }
-  .btn.primary { background: var(--text); color: #fff; }
-  .btn.primary:hover { background: var(--accent); border-color: var(--accent); }
-
-  /* ---------- CARDS ---------- */
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
-  .card {
-    background: var(--card); border-radius: var(--radius); padding: 18px;
-    text-decoration: none; display: flex; flex-direction: column; gap: 8px;
-    transition: background .15s, transform .15s;
-  }
-  a.card:hover { background: var(--card-hover); transform: translateY(-2px); }
-  .card h3 { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
-  .card p { font-size: 14px; color: var(--muted); flex: 1; }
-  .card .arrow { margin-left: auto; transition: transform .15s; }
-  a.card:hover .arrow { transform: translate(2px,-2px); color: var(--accent); }
-  .tags { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--muted); }
-  .tags span::before {
-    content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%;
-    background: var(--dot, #999); margin-right: 5px; vertical-align: 1px;
-  }
-
-  /* ---------- EXPERIENCE ---------- */
-  .job { border-left: 3px solid var(--accent); padding-left: 18px; margin-bottom: 28px; }
-  .job h3 { font-size: 18px; }
-  .job .meta { font-size: 14px; color: var(--muted); margin-bottom: 8px; }
-  .job ul { padding-left: 18px; color: #333; }
-  .job li { margin: 4px 0; }
-  .sub { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 8px 0 12px; }
-
-  /* ---------- CURRENT APP (mockup) ---------- */
-  .badge {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px;
-    background: #fde8e7; color: var(--accent); margin-bottom: 14px;
-  }
-  .badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: pulse 1.6s infinite; }
-  @keyframes pulse { 50% { opacity: .3; } }
-  .app-wrap { display: grid; grid-template-columns: 1fr 1.25fr; gap: 28px; align-items: center; }
-  .mockup {
-    background: #111; color: #eee; border-radius: 16px; padding: 22px;
-    box-shadow: 0 20px 50px -20px rgba(0,0,0,.45);
-  }
-  .mock-top { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #999; }
-  .dots { display: flex; gap: 6px; }
-  .dots i { width: 10px; height: 10px; border-radius: 50%; background: #333; display: block; }
-  .dots i:first-child { background: var(--accent); }
-  .cat-tabs { display: flex; gap: 6px; margin: 14px 0 12px; flex-wrap: wrap; }
-  .cat-tabs button {
-    background: #222; color: #bbb; border: 0; border-radius: 999px; padding: 5px 12px;
-    font: 600 12px Inter, sans-serif; cursor: pointer; display: flex; align-items: center; gap: 6px;
-    transition: background .15s, color .15s;
-  }
-  .cat-tabs button:hover { color: #fff; }
-  .cat-tabs button.on { background: #fff; color: #111; }
-  .cat-tabs button i { width: 8px; height: 8px; border-radius: 2px; display: block; }
-  .trk-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-  .trk { display: flex; align-items: center; gap: 10px; background: #1b1b1b; border-radius: 10px; padding: 8px 10px; border: 1px solid transparent; transition: border-color .2s; }
-  .trk.running { border-color: rgba(229,50,45,.6); }
-  .trk .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-  .trk .nm { flex: 1; font-size: 14px; font-weight: 600; line-height: 1.25; }
-  .trk .nm small { display: block; font-weight: 500; font-size: 11px; color: #888; }
-  .trk .tm { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 13px; color: #bbb; }
-  .trk.running .tm { color: #fff; }
-  .play {
-    width: 28px; height: 28px; border-radius: 50%; border: 0; background: #2a2a2a; color: #fff;
-    cursor: pointer; display: grid; place-items: center; font-size: 10px; transition: background .15s;
-  }
-  .play:hover { background: #3a3a3a; }
-  .trk.running .play { background: var(--accent); }
-  .week { margin-top: 16px; }
-  .week-head { display: flex; justify-content: space-between; font-size: 12px; color: #999; margin-bottom: 8px; }
-  .week-head b { color: #fff; font-family: "JetBrains Mono", ui-monospace, monospace; font-weight: 500; }
-  .bars { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; height: 90px; }
-  .bar { display: flex; flex-direction: column-reverse; height: 100%; }
-  .bar div { flex: none; border-radius: 2px; margin-top: 2px; transition: height .4s ease; }
-  .days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; font-size: 10px; color: #777; text-align: center; margin-top: 6px; }
-  .days .today { color: #fff; font-weight: 700; }
-
-  /* ---------- JIMOTHY THE RACCOON + TRASH CAN ---------- */
-  body { overflow-x: clip; }
-  .title-wrap { position: relative; padding-top: 150px; }
-  .skyline, .stage {
-    position: absolute; left: 0; right: 0; top: 0; height: 132px;
-    border-radius: 16px; overflow: hidden;
-  }
-  .skyline svg { width: 100%; height: 100%; display: block; }
-  .skyline .cloud { animation: drift 40s linear infinite alternate; }
-  .skyline .c2 { animation-duration: 55s; animation-direction: alternate-reverse; }
-  @keyframes drift { from { transform: translateX(-30px); } to { transform: translateX(60px); } }
-  .skyline .birds { animation: birds 18s ease-in-out infinite alternate; }
-  @keyframes birds { from { transform: translate(-20px, 4px); } to { transform: translate(40px, -4px); } }
-  .skyline .ferry { animation: ferry 60s linear infinite; }
-  @keyframes ferry { from { transform: translateX(-30px); } to { transform: translateX(630px); } }
-  .skyline .wheel { transform-box: fill-box; transform-origin: center; animation: spin 30s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .skyline .needle-light { animation: blinkLight 2s steps(1) infinite; }
-  @keyframes blinkLight { 50% { opacity: .15; } }
-  .stage { pointer-events: none; z-index: 1; }
-  .actors {
-    position: absolute; left: 0; bottom: 10px; height: 100px;
-    transform: scale(.8); transform-origin: 0 100%;
-  }
-  .actors > * { position: absolute; }
-  .can-back, .can-front { width: 56px; height: 70px; bottom: 0; left: 0; transform-origin: 50% 100%; }
-  .can-back { z-index: 1; }
-  .can-front { z-index: 3; }
-  .lid { z-index: 4; width: 62px; height: 20px; bottom: 58px; left: 0; transform-origin: 50% 50%; }
-  .words { z-index: 5; left: 0; top: 38px; width: 0; height: 0; }
-  .rummage .can-back, .rummage .can-front { animation: canShake .13s infinite alternate ease-in-out; }
-  @keyframes canShake { from { transform: rotate(-2.5deg) translateX(-1px); } to { transform: rotate(2.5deg) translateX(1px); } }
-
-  .jimothy {
-    z-index: 2; left: 0; bottom: 0; width: 120px; height: 69px;
-    background: none; border: 0; padding: 0; cursor: pointer; pointer-events: auto;
-    transform: translateX(-200vw); transform-origin: 50% 50%;
-  }
-  .jimothy svg { width: 100%; height: 100%; overflow: visible; display: block; transform-origin: 50% 50%; }
-  .jimothy .shadow { transition: opacity .15s; }
-  .jimothy.air .shadow, .jimothy.diving .shadow { opacity: 0; }
-  .jimothy .leg { transform-box: fill-box; transform-origin: 50% 8%; transition: transform .15s; }
-  .jimothy.running .leg.a { animation: legSwing .18s infinite alternate ease-in-out; }
-  .jimothy.running .leg.b { animation: legSwing .18s infinite alternate-reverse ease-in-out; }
-  .jimothy.diving .leg.a { animation: legSwing .24s infinite alternate ease-in-out; }
-  .jimothy.diving .leg.b { animation: legSwing .24s infinite alternate-reverse ease-in-out; }
-  @keyframes legSwing { from { transform: rotate(40deg); } to { transform: rotate(-40deg); } }
-  .jimothy.diving .front { opacity: 0; }
-  .jimothy.air .leg.a { transform: rotate(-45deg); }
-  .jimothy.air .leg.b { transform: rotate(45deg); }
-  .jimothy.running .rbody { animation: bob .18s infinite alternate ease-in-out; }
-  @keyframes bob { to { transform: translateY(-3px); } }
-  .jimothy .tail { transform-box: fill-box; transform-origin: 95% 60%; }
-  .jimothy.running .tail { transform: rotate(-10deg); }
-  .jimothy.diving .tail { animation: tailWag .2s infinite alternate ease-in-out; }
-  .jimothy.idle .tail { animation: tailWag 1.8s infinite alternate ease-in-out; }
-  @keyframes tailWag { from { transform: rotate(-14deg); } to { transform: rotate(10deg); } }
-  .jimothy.diving svg { animation: wiggle .22s infinite alternate ease-in-out; }
-  @keyframes wiggle { from { transform: rotate(-7deg) translateX(-1px); } to { transform: rotate(7deg) translateX(1px); } }
-  .jimothy .eyes { transform-box: fill-box; transform-origin: center; }
-  .jimothy.idle .eyes { animation: blink 4s infinite; }
-  @keyframes blink { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(.1); } }
-
-  .trash-word {
-    position: absolute; left: 0; top: 0; translate: -50% -50%;
-    white-space: nowrap; font-size: 15px; font-weight: 700; line-height: 1;
-    padding: 5px 9px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,.15);
-  }
-  .trash-word.w0 { background: #fff; color: #222; border: 1px solid #ddd; }
-  .trash-word.w1 { background: #ffd84d; color: #3d2f00; border-radius: 12px 4px 12px 4px; }
-  .trash-word.w2 { background: #e5322d; color: #fff; }
-  .trash-word.w3 { background: #3fb67b; color: #fff; border-radius: 10px; }
-  .trash-word.w4 { background: #c9b79c; color: #3a2e1d; border-radius: 3px; }
-  .trash-word.first { font-size: 19px; background: #101010; color: #fff; }
-  .feature-list { list-style: none; margin-top: 16px; }
-  .feature-list li { padding: 6px 0 6px 26px; position: relative; }
-  .feature-list li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
-
-  /* ---------- SKILLS ---------- */
-  .skill-groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
-  .chip { font-size: 13px; padding: 4px 10px; border-radius: 6px; background: var(--bg); border: 1px solid var(--line); }
-
-  /* ---------- RESUME / CONTACT ---------- */
-  .resume-box {
-    background: var(--text); color: #fff; border-radius: 14px; padding: 32px;
-    display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;
-  }
-  .resume-box h3 { font-size: 22px; margin-bottom: 4px; }
-  .resume-box p { color: #bbb; font-size: 15px; }
-  .resume-box .btn { border-color: #fff; color: #fff; }
-  .resume-box .btn:hover { background: var(--accent); border-color: var(--accent); }
-  .contact-line { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
-  .contact-line svg { width: 16px; height: 16px; fill: currentColor; }
-  footer { padding: 56px 0 40px; font-size: 13px; color: var(--muted); }
-
-  /* Fade-in on scroll */
-  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
-  .reveal.in { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .reveal { opacity: 1; transform: none; transition: none; }
-    .skyline * { animation: none !important; }
-    .badge::before { animation: none; }
-  }
-
-  /* ---------- MOBILE ---------- */
-  @media (max-width: 720px) {
-    .nav { flex-direction: column; align-items: stretch; justify-content: center; gap: 6px; height: auto; padding: 10px 0; }
-    :root { --nav-h: 92px; }
-    .hero { flex-direction: column-reverse; align-items: flex-start; gap: 24px; padding-top: 32px; }
-    .hero h1 { font-size: 40px; }
-    .avatar { width: 120px; height: 120px; font-size: 36px; }
-    .app-wrap { grid-template-columns: 1fr; }
-    h2 { font-size: 28px; }
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -314,7 +39,6 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#current-app">Current App</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -324,11 +48,10 @@
 
   <!-- ABOUT -->
   <section id="about" class="hero">
-    <div class="hero-text">
-      <div class="title-wrap">
-        <!-- Jimothy the raccoon digs through the trash and throws out greetings -->
+    <!-- Seattle scene with Jimothy the raccoon (decorative) -->
+    <div class="scene" aria-hidden="true">
         <div class="skyline" aria-hidden="true">
-          <svg viewBox="0 0 600 132" preserveAspectRatio="xMidYMax slice">
+          <svg viewBox="0 0 880 132" preserveAspectRatio="xMidYMax slice">
             <defs>
               <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0" stop-color="#dbe6f1"/>
@@ -340,7 +63,20 @@
                 <stop offset="1" stop-color="#cfdbe7"/>
               </linearGradient>
             </defs>
-            <rect width="600" height="132" fill="url(#sky)"/>
+            <rect width="880" height="132" fill="url(#sky)"/>
+            <g transform="translate(140 0)">
+            <!-- extra hills and evergreens on the sides -->
+            <path d="M-140 108 Q-100 84 -60 92 Q-30 98 0 108 Z" fill="#d3dbe4"/>
+            <path d="M590 108 Q640 82 690 90 Q720 95 740 104 L740 108 Z" fill="#d3dbe4"/>
+            <g fill="#a9b8b2">
+              <path d="M-118 110 L-110 84 L-102 110 Z"/><path d="M-104 110 L-95 78 L-86 110 Z"/>
+              <path d="M-84 110 L-77 88 L-70 110 Z"/><path d="M-40 110 L-33 90 L-26 110 Z"/>
+              <path d="M612 110 L620 86 L628 110 Z"/><path d="M626 110 L635 80 L644 110 Z"/>
+              <path d="M648 110 L655 90 L662 110 Z"/><path d="M690 110 L698 84 L706 110 Z"/>
+            </g>
+            <g fill="#bcc7d3">
+              <rect x="-10" y="90" width="14" height="20"/><rect x="560" y="92" width="18" height="18"/>
+            </g>
             <circle cx="478" cy="60" r="20" fill="#ffd7b5" opacity=".75"/>
             <!-- Mt. Rainier -->
             <path d="M290 104 L360 66 Q395 44 420 36 Q432 33 446 38 Q470 48 505 68 L580 104 Z" fill="#cbd5e1"/>
@@ -398,16 +134,17 @@
             </g>
             <path d="M512 110 L520 86 L528 110" stroke="#8b98a7" stroke-width="1.8" fill="none"/>
             <!-- water -->
-            <rect x="0" y="108" width="600" height="14" fill="url(#water)"/>
-            <path d="M30 113 h18 M120 116 h24 M250 112 h16 M380 115 h22 M470 113 h14 M560 116 h18" stroke="#e6eef6" stroke-width="1.2" stroke-linecap="round"/>
+            <rect x="-140" y="108" width="880" height="14" fill="url(#water)"/>
+            <path d="M-110 114 h20 M-40 112 h14 M30 113 h18 M120 116 h24 M250 112 h16 M380 115 h22 M470 113 h14 M560 116 h18 M640 113 h20 M700 116 h16" stroke="#e6eef6" stroke-width="1.2" stroke-linecap="round"/>
             <g class="ferry">
               <path d="M0 115 L26 115 L23 120 L3 120 Z" fill="#f7f7f7"/>
               <rect x="5" y="111" width="15" height="4" fill="#3d8b5a"/>
               <rect x="10" y="108" width="3" height="3" fill="#2c2c2c"/>
             </g>
             <!-- waterfront walkway -->
-            <rect x="0" y="121" width="600" height="11" fill="#e4e7eb"/>
-            <rect x="0" y="121" width="600" height="1.5" fill="#cdd2d8"/>
+            <rect x="-140" y="121" width="880" height="11" fill="#e4e7eb"/>
+            <rect x="-140" y="121" width="880" height="1.5" fill="#cdd2d8"/>
+            </g>
           </svg>
         </div>
         <div class="stage" id="stage">
@@ -416,7 +153,7 @@
             <ellipse cx="28" cy="8" rx="27" ry="7" fill="#6b7581"/>
             <ellipse cx="28" cy="8.5" rx="23.5" ry="5" fill="#1d2126"/>
           </svg>
-          <button class="jimothy" id="jimothy" type="button" aria-label="Jimothy the raccoon. Click him to dig through the trash again.">
+          <div class="jimothy" id="jimothy">
             <svg viewBox="0 0 140 80" aria-hidden="true">
               <defs><clipPath id="tailClip"><path d="M40 42 C30 34 16 28 6 32 C0 35 0 42 6 44 C16 47 28 48 40 52 Z"/></clipPath></defs>
               <ellipse class="shadow" cx="72" cy="77" rx="40" ry="3" fill="rgba(0,0,0,.12)"/>
@@ -449,7 +186,7 @@
                 <path d="M127 41 L138 44 M127 40 L139 41" stroke="#555" stroke-width=".5"/>
               </g>
             </svg>
-          </button>
+          </div>
           <svg class="can-front" viewBox="0 0 56 70" aria-hidden="true">
             <path d="M1 8 A27 7 0 0 0 55 8 L50 65 Q49.5 70 45 70 L11 70 Q6.5 70 6 65 Z" fill="#8d97a3"/>
             <path d="M14 20 L16 64 M28 21 L28 65 M42 20 L40 64" stroke="#76808c" stroke-width="2.5" stroke-linecap="round"/>
@@ -464,11 +201,12 @@
           <div class="words" id="words" aria-hidden="true"></div>
          </div>
         </div>
-        <h1><span class="h1-text"><span class="hi">Hi,</span> I'm Carmelo</span></h1>
-      </div>
-      <p>I'm a software developer based in Seattle, WA, originally from Argentina. I recently earned my Bachelor of Applied Science in Software Development from Bellevue College.</p>
-      <p>For almost four years I led a web team at <a href="#work">Bellevue College</a>, maintaining WordPress sites across departments, improving navigation so students could find information in fewer clicks, and making the sites more accessible and easier to find on Google.</p>
-      <p>Right now I'm building a <a href="#current-app">time tracker app</a> to track anything I want to put time into, from my job search to coding and the gym, and I'm learning to build faster with AI tools like Claude and ChatGPT.</p>
+    </div>
+    <div class="hero-text">
+      <h1><span class="h1-text"><span class="hi">Hi,</span> I'm Carmelo</span></h1>
+      <p>I'm a software developer based in Seattle, originally from Argentina. I recently earned my Bachelor of Applied Science in Software Development.</p>
+      <p>For nearly four years I worked on websites in higher education, including two years leading a web team that managed WordPress websites for multiple departments from first request to launch. I worked with each department to gather requirements, coordinated tasks and deadlines, and reviewed every site before it went live. Along the way, I restructured navigation so students could reach information in fewer clicks, simplified content, tested sites for ADA accessibility, and improved their SEO.</p>
+      <p>Right now I'm building a <a href="#current-app">Time Tracker app</a>, a simple way to track the time you put into the things that help you grow. Personally, I use it for my job search, the gym and personal development, so I can see the real progress I'm making, not just the feeling of being busy.</p>
       <div class="socials">
         <a class="icon-btn" href="https://github.com/veraexequiel" target="_blank" rel="noopener" aria-label="GitHub">
           <svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
@@ -476,8 +214,7 @@
         <a class="icon-btn" href="https://www.linkedin.com/in/carmelo-vera" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
         </a>
-        <a class="btn primary" href="#resume">Resume</a>
-        <a class="btn" href="#contact">Contact me</a>
+        <a class="btn primary" href="#contact">Contact me</a>
       </div>
     </div>
     <img class="avatar photo" src="photo.jpg" alt="Carmelo Vera" width="190" height="190">
@@ -487,13 +224,21 @@
   <section id="work" class="reveal">
     <h2>Work</h2>
     <div class="job">
-      <h3>Lead Peer Educator - Web Team</h3>
-      <div class="meta">Bellevue College · 2022 - 2026</div>
+      <h3>Student Affairs Peer Educator - Student Success &amp; Retention</h3>
+      <div class="meta">Bellevue College · Nov 2024 - Jun 2026</div>
       <ul>
-        <li>Led a web team maintaining WordPress sites across college departments: requirements gathering, task and deadline management, and pre-launch reviews.</li>
-        <li>Reorganized site navigation and simplified content so students reach the information they need in fewer clicks.</li>
-        <li>Tested sites for ADA accessibility with an accessibility checker and fixed issues before launch.</li>
-        <li>Improved SEO across department sites and used Google Analytics to understand how students used them.</li>
+        <li>Maintained the Student Success &amp; Retention WordPress pages, updating content, navigation, links and layouts so online resources stayed accurate and easy to use.</li>
+        <li>Used Salesforce as part of the team's daily work.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <h3>Lead Peer Educator - Web Development &amp; WordPress</h3>
+      <div class="meta">Bellevue College · Nov 2022 - Dec 2024</div>
+      <ul>
+        <li>Led web projects for multiple college departments: gathered requirements with content owners, coordinated tasks and deadlines, and reviewed every site before launch.</li>
+        <li>Designed, managed and troubleshot WordPress websites, working with themes, WPBakery, Advanced Custom Fields and contact forms.</li>
+        <li>Reorganized site navigation and rewrote content so students could reach useful information in fewer clicks.</li>
+        <li>Applied SEO updates (page titles, meta descriptions, content structure) and tested pages across browsers, screen sizes and for ADA accessibility.</li>
       </ul>
     </div>
 
@@ -501,18 +246,18 @@
     <div class="grid">
       <a class="card" href="https://www.bellevuecollege.edu/leadpeereducators/" target="_blank" rel="noopener">
         <h3>Lead Peer Educators <span class="arrow">↗</span></h3>
-        <p>Student resources hub with announcements, programs and the Benefits Hub for food, housing and emergency aid.</p>
-        <div class="tags"><span style="--dot:#21759b">WordPress</span><span style="--dot:#e5322d">Accessibility</span><span style="--dot:#34a853">SEO</span></div>
+        <p>Organized the site's information and restructured the navigation so students could reach resources like the Benefits Hub in fewer clicks, and checked every page for accessibility.</p>
+        <div class="tags"><span style="--dot:#21759b">WordPress</span><span style="--dot:#a259ff">Navigation / UX</span><span style="--dot:#e5322d">Accessibility</span></div>
       </a>
       <a class="card" href="https://www.bellevuecollege.edu/asc/" target="_blank" rel="noopener">
         <h3>Academic Success Center <span class="arrow">↗</span></h3>
-        <p>Free tutoring, textbook and calculator lending, and workshops. Organized so students find help in fewer clicks.</p>
-        <div class="tags"><span style="--dot:#21759b">WordPress</span><span style="--dot:#a259ff">Navigation / UX</span></div>
+        <p>Improved SEO so students could find the center's tutoring services on Google, and refreshed the pages into a cleaner, more accessible design.</p>
+        <div class="tags"><span style="--dot:#21759b">WordPress</span><span style="--dot:#34a853">SEO</span><span style="--dot:#e5322d">Accessibility</span></div>
       </a>
       <a class="card" href="https://www.bellevuecollege.edu/diversity/the-social-justice-center/" target="_blank" rel="noopener">
         <h3>Social Justice Center <span class="arrow">↗</span></h3>
-        <p>Programs on community care, accessibility, wellness and equity education, presented in clear, simple content.</p>
-        <div class="tags"><span style="--dot:#21759b">WordPress</span><span style="--dot:#e5322d">Accessibility</span></div>
+        <p>Simplified and reorganized the content into a clear, accessible layout, making the center's programs easier to find and understand.</p>
+        <div class="tags"><span style="--dot:#21759b">WordPress</span><span style="--dot:#f0a500">Content</span><span style="--dot:#e5322d">Accessibility</span></div>
       </a>
     </div>
   </section>
@@ -520,17 +265,27 @@
   <!-- PROJECTS -->
   <section id="projects" class="reveal">
     <h2>Projects</h2>
-    <div class="grid">
+    <div class="grid two">
       <a class="card" href="#current-app">
         <h3>Time Tracker <span class="arrow">↗</span></h3>
         <p>Track the time you put into anything, organized in categories like Job or Self Development, with weekly charts. In progress.</p>
         <div class="tags"><span style="--dot:#f7df1e">JavaScript</span><span style="--dot:#a259ff">Figma</span></div>
       </a>
       <a class="card" href="#about">
-        <h3>This website <span class="arrow">↗</span></h3>
-        <p>My portfolio, designed and built with AI-assisted development (Claude, ChatGPT), hosted on GitHub Pages and tracked with Google Analytics.</p>
+        <h3>Portfolio Website <span class="arrow">↗</span></h3>
+        <p>The site you're on: a responsive single-page portfolio with custom SVG animations, deployed on GitHub Pages and tracked with Google Analytics.</p>
         <div class="tags"><span style="--dot:#e34c26">HTML</span><span style="--dot:#563d7c">CSS</span><span style="--dot:#f7df1e">JavaScript</span></div>
       </a>
+      <div class="card">
+        <h3>T-Shirt Store</h3>
+        <p>Full-stack web app with a product catalog, shopping cart and customer reviews. JavaScript front end with a Node.js backend and REST API endpoints (GET, POST, PUT, DELETE).</p>
+        <div class="tags"><span style="--dot:#f7df1e">JavaScript</span><span style="--dot:#3c873a">Node.js</span><span style="--dot:#0f9d9a">REST APIs</span></div>
+      </div>
+      <div class="card">
+        <h3>SilentHelp</h3>
+        <p>Android personal safety app with a simulated incoming call, keyword detection and incident logging. Team project: I built the main interface and navigation.</p>
+        <div class="tags"><span style="--dot:#a97bff">Kotlin</span><span style="--dot:#3ddc84">Jetpack Compose</span><span style="--dot:#555">Git/GitHub</span></div>
+      </div>
     </div>
   </section>
 
@@ -567,45 +322,40 @@
     <h2>Skills</h2>
     <div class="skill-groups">
       <div class="card">
-        <h3>Web</h3>
-        <div class="chips"><span class="chip">HTML</span><span class="chip">CSS / CSS Grid</span><span class="chip">JavaScript</span><span class="chip">WordPress</span><span class="chip">WPBakery</span><span class="chip">Advanced Custom Fields</span></div>
+        <h3>Web &amp; CMS</h3>
+        <div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3 / Grid</span><span class="chip">JavaScript</span><span class="chip">jQuery</span><span class="chip">PHP</span><span class="chip">WordPress</span><span class="chip">WPBakery</span><span class="chip">Advanced Custom Fields</span></div>
       </div>
       <div class="card">
-        <h3>Data & Tools</h3>
-        <div class="chips"><span class="chip">MySQL</span><span class="chip">Git / GitHub</span><span class="chip">Figma</span><span class="chip">Photoshop</span><span class="chip">Salesforce</span></div>
+        <h3>App Development</h3>
+        <div class="chips"><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">REST APIs</span><span class="chip">JSON</span><span class="chip">Kotlin</span><span class="chip">C#</span><span class="chip">Python</span></div>
       </div>
       <div class="card">
-        <h3>SEO & Accessibility</h3>
-        <div class="chips"><span class="chip">Google Analytics</span><span class="chip">SEO</span><span class="chip">ADA / WCAG testing</span><span class="chip">Content strategy</span></div>
+        <h3>Databases</h3>
+        <div class="chips"><span class="chip">MySQL</span><span class="chip">SQL Server (SSMS)</span><span class="chip">MongoDB</span><span class="chip">SQL queries &amp; joins</span><span class="chip">Database design</span></div>
       </div>
       <div class="card">
-        <h3>AI & Ways of Working</h3>
-        <div class="chips"><span class="chip">Claude</span><span class="chip">ChatGPT</span><span class="chip">Project coordination</span><span class="chip">Requirements gathering</span><span class="chip">English / Spanish</span></div>
+        <h3>SEO, Analytics &amp; Accessibility</h3>
+        <div class="chips"><span class="chip">SEO</span><span class="chip">Google Analytics</span><span class="chip">ADA accessibility testing</span><span class="chip">Cross-browser testing</span></div>
       </div>
-    </div>
-  </section>
-
-  <!-- RESUME -->
-  <section id="resume" class="reveal">
-    <h2>Resume</h2>
-    <div class="resume-box">
-      <div>
-        <h3>Want the full picture?</h3>
-        <p>Experience, education and skills in one page.</p>
+      <div class="card">
+        <h3>Tools</h3>
+        <div class="chips"><span class="chip">Git / GitHub</span><span class="chip">GitHub Pages</span><span class="chip">VS Code</span><span class="chip">Visual Studio</span><span class="chip">Figma</span><span class="chip">Jira</span><span class="chip">Salesforce</span><span class="chip">Linux</span><span class="chip">Photoshop</span></div>
       </div>
-      <!-- Put your PDF next to this file with this exact name -->
-      <a class="btn" href="Resume_CarmeloVera.pdf" target="_blank" rel="noopener">Download resume (PDF) ↓</a>
+      <div class="card">
+        <h3>AI &amp; Ways of Working</h3>
+        <div class="chips"><span class="chip">Claude</span><span class="chip">ChatGPT</span><span class="chip">Requirements gathering</span><span class="chip">Project coordination</span><span class="chip">English / Spanish</span></div>
+      </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="reveal">
     <h2>Wanna get in touch?</h2>
-    <p>I'm open to software development, web and digital roles. Happy to chat.</p>
+    <p>Whether it's a job opportunity, a project or just a quick question, I'd love to hear from you.</p>
     <div style="margin-top:16px">
       <div class="contact-line">
         <svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4Zm10 7.5L4 6.5V18h16V6.5l-8 5Zm0-2.4L19.2 6H4.8L12 9.1Z"/></svg>
-        <a href="mailto:veraexequiel5@gmail.com">veraexequiel5@gmail.com</a>
+        <a href="mailto:hi@carmelovera.com">hi@carmelovera.com</a>
       </div>
       <div class="contact-line">
         <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
@@ -615,236 +365,10 @@
   </section>
 
   <footer>
-    © <span id="year"></span> Carmelo Vera · Built with HTML, CSS & JavaScript, with help from AI.
+    © <span id="year"></span> Carmelo Vera · Built with HTML, CSS & JavaScript.
   </footer>
 </main>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Active tab follows the section you are reading
-  const links = [...document.querySelectorAll('.tabs a')];
-  const sections = links.map(a => document.querySelector(a.getAttribute('href')));
-  const header = document.querySelector('header');
-  function setActive() {
-    const y = window.scrollY + 140;
-    let current = sections[0];
-    sections.forEach(s => { if (s.offsetTop <= y) current = s; });
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) current = sections[sections.length - 1];
-    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current.id));
-    header.classList.toggle('scrolled', window.scrollY > 8);
-  }
-  window.addEventListener('scroll', setActive, { passive: true });
-  setActive();
-
-  // Fade-in sections
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // ---------- Time Tracker concept (sample data, minutes per day Mon..Sun) ----------
-  const TODAY = 4; // Friday
-  const categories = [
-    { id: 'all', name: 'All', color: '#fff' },
-    { id: 'job', name: 'Job', color: '#4f8cff' },
-    { id: 'self', name: 'Self Development', color: '#39d353' }
-  ];
-  const trackers = [
-    { name: 'Job Search', cat: 'job', color: '#4f8cff', week: [95, 120, 80, 110, 85, 30, 0] },
-    { name: 'Networking', cat: 'job', color: '#a9c4ff', week: [20, 0, 35, 15, 20, 0, 0] },
-    { name: 'Coding', cat: 'self', color: '#39d353', week: [60, 45, 90, 30, 55, 120, 90] },
-    { name: 'Gym', cat: 'self', color: '#a6e3a1', week: [50, 0, 55, 0, 60, 70, 0] },
-    { name: 'Reading', cat: 'self', color: '#f5c542', week: [15, 20, 0, 25, 10, 30, 40] }
-  ];
-  trackers.forEach(t => t.extraSecs = 0);
-  let activeCat = 'all', runningIdx = -1, ticker = null;
-  const catTabs = document.getElementById('catTabs'), trkList = document.getElementById('trkList');
-  const barsEl = document.getElementById('bars');
-  const catName = id => categories.find(c => c.id === id).name;
-  const todaySecs = t => t.week[TODAY] * 60 + t.extraSecs;
-  const daySecs = (t, d) => d === TODAY ? todaySecs(t) : t.week[d] * 60;
-  const hm = s => { const h = Math.floor(s / 3600), m = Math.floor(s / 60) % 60; return h ? `${h}h ${m}m` : `${m}m`; };
-  const clock = s => [Math.floor(s / 3600), Math.floor(s / 60) % 60, s % 60].map(n => String(n).padStart(2, '0')).join(':');
-  const visible = () => trackers.map((t, i) => ({ t, i })).filter(({ t }) => activeCat === 'all' || t.cat === activeCat);
-
-  function renderTabs() {
-    catTabs.innerHTML = '';
-    categories.forEach(c => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.className = c.id === activeCat ? 'on' : '';
-      b.innerHTML = (c.id === 'all' ? '' : `<i style="background:${c.color}"></i>`) + c.name;
-      b.addEventListener('click', () => { activeCat = c.id; renderAll(); });
-      catTabs.appendChild(b);
-    });
-  }
-  function renderList() {
-    trkList.innerHTML = '';
-    visible().forEach(({ t, i }) => {
-      const li = document.createElement('li');
-      li.className = 'trk' + (i === runningIdx ? ' running' : '');
-      li.innerHTML = `<span class="dot" style="background:${t.color}"></span>
-        <span class="nm">${t.name}<small>${catName(t.cat)}</small></span>
-        <span class="tm" data-i="${i}">${clock(todaySecs(t))}</span>
-        <button class="play" type="button" aria-label="${i === runningIdx ? 'Stop' : 'Start'} ${t.name}">${i === runningIdx ? '❚❚' : '▶'}</button>`;
-      li.querySelector('.play').addEventListener('click', () => toggle(i));
-      trkList.appendChild(li);
-    });
-  }
-  function renderChart() {
-    const all = trackers;
-    const max = Math.max(...[0, 1, 2, 3, 4, 5, 6].map(d => all.reduce((s, t) => s + daySecs(t, d), 0)));
-    const vis = visible().map(v => v.t);
-    barsEl.innerHTML = '';
-    let total = 0;
-    for (let d = 0; d < 7; d++) {
-      const bar = document.createElement('div');
-      bar.className = 'bar';
-      vis.forEach(t => {
-        const s = daySecs(t, d); total += s;
-        if (!s) return;
-        const seg = document.createElement('div');
-        seg.style.height = (s / max * 100) + '%';
-        seg.style.background = t.color;
-        seg.title = `${t.name}: ${hm(s)}`;
-        bar.appendChild(seg);
-      });
-      barsEl.appendChild(bar);
-    }
-    document.getElementById('weekLabel').textContent = 'This week · ' + catName(activeCat).toLowerCase();
-    document.getElementById('weekTotal').textContent = hm(total);
-  }
-  function renderAll() { renderTabs(); renderList(); renderChart(); }
-  function toggle(i) {
-    clearInterval(ticker); ticker = null;
-    runningIdx = runningIdx === i ? -1 : i;
-    if (runningIdx >= 0) {
-      ticker = setInterval(() => {
-        const t = trackers[runningIdx]; t.extraSecs += 1;
-        const el = trkList.querySelector(`.tm[data-i="${runningIdx}"]`);
-        if (el) el.textContent = clock(todaySecs(t));
-        if (t.extraSecs % 5 === 0) renderChart();
-      }, 1000);
-    }
-    renderList(); renderChart();
-  }
-  renderAll();
-
-  // ---------- Jimothy the raccoon ----------
-  const jim = document.getElementById('jimothy');
-  const stage = document.getElementById('stage');
-  const lid = document.getElementById('lid');
-  const wordsEl = document.getElementById('words');
-  const canBack = stage.querySelector('.can-back'), canFront = stage.querySelector('.can-front');
-  const h1text = document.querySelector('.h1-text');
-  const wrap = document.querySelector('.title-wrap');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const greetings = ['¡Hola!', 'Bonjour!', 'Ciao!', 'Olá!', 'Hallo!', 'こんにちは!', '안녕하세요!', '你好!', 'Namaste!', 'Merhaba!', 'Hej!', 'Привет!', 'Aloha!'];
-  const JW = 120, CAN_W = 56, S = 0.8;
-  const actors = document.getElementById('actors');
-  let canX = 0, canCx = 0, colW = 0, busy = false, lidOn = true;
-  let pos = { x: 0, y: 0, r: 0 };
-
-  const T = p => `translate(${p.x}px, ${p.y}px) rotate(${p.r}deg)`;
-  const wait = ms => new Promise(r => setTimeout(r, ms));
-  const rimPos = () => ({ x: canCx - JW / 2, y: -57, r: 0 });
-  const divePos = () => ({ x: canCx - JW / 2 + 3, y: -27, r: 88 });
-  const place = p => { pos = p; jim.style.transform = T(p); };
-
-  function layout() {
-    colW = wrap.clientWidth / S;
-    actors.style.width = colW + 'px';
-    canX = Math.max(150, Math.min(h1text.offsetWidth / S - 40, colW - CAN_W - 20));
-    canCx = canX + CAN_W / 2;
-    canBack.style.left = canFront.style.left = canX + 'px';
-    lid.style.left = (canX - 3) + 'px';
-    wordsEl.style.left = canCx + 'px';
-  }
-  // Moves Jimothy through keyframes, then keeps him at the last one
-  async function move(frames, duration, easing = 'linear') {
-    const a = jim.animate(frames.map(f => ({ transform: T(f), offset: f.o, easing: f.e })), { duration, easing, fill: 'forwards' });
-    await a.finished;
-    place(frames[frames.length - 1]);
-    a.cancel();
-  }
-  function flyLid() {
-    lidOn = false;
-    const a = lid.animate([
-      { transform: 'translate(0,0) rotate(0)' },
-      { transform: 'translate(-40px,-55px) rotate(-200deg)', offset: .45, easing: 'ease-in' },
-      { transform: 'translate(-85px,57px) rotate(-360deg)', offset: .85 },
-      { transform: 'translate(-85px,57px) rotate(-360deg)' }
-    ], { duration: 900, fill: 'forwards' });
-    a.finished.then(() => { lid.style.transform = 'translate(-85px,57px) rotate(-360deg)'; a.cancel(); });
-  }
-  function throwWord(text, i) {
-    const el = document.createElement('span');
-    el.className = 'trash-word w' + (i % 5) + (i === 0 ? ' first' : '');
-    el.textContent = text;
-    wordsEl.appendChild(el);
-    const minX = -(canCx - 40), maxX = Math.max(10, Math.min(180, colW - canCx - 45));
-    let dx = i === 0 ? -Math.min(130, canCx - 50)
-      : Math.random() < .75 ? -(20 + Math.random() * (canCx - 50)) : 20 + Math.random() * (maxX - 20);
-    dx = Math.max(minX, Math.min(maxX, dx));
-    const peak = -(30 + Math.random() * 35), land = 50 + Math.random() * 3;
-    const rot = i === 0 ? -8 : Math.random() * 50 - 25;
-    const a = el.animate([
-      { transform: 'translate(0,12px) rotate(0) scale(.5)', opacity: 0, easing: 'ease-out' },
-      { transform: `translate(${dx * .5}px,${peak}px) rotate(${rot * .6}deg) scale(1)`, opacity: 1, offset: .3, easing: 'ease-in' },
-      { transform: `translate(${dx}px,${land}px) rotate(${rot}deg)`, opacity: 1, offset: .55 },
-      { transform: `translate(${dx}px,${land}px) rotate(${rot}deg)`, opacity: 1, offset: .85 },
-      { transform: `translate(${dx}px,${land + 6}px) rotate(${rot}deg)`, opacity: 0 }
-    ], { duration: i === 0 ? 4200 : 3000, fill: 'forwards' });
-    a.finished.then(() => el.remove());
-  }
-  async function digIn() {
-    jim.classList.remove('idle');
-    jim.classList.add('air');
-    if (lidOn) setTimeout(flyLid, 150);
-    const d = divePos();
-    await move([pos, { x: (pos.x + d.x) / 2 + 10, y: -80, r: 25, o: .5, e: 'ease-in' }, d], 560, 'ease-out');
-    jim.classList.remove('air');
-    jim.classList.add('diving');
-    stage.classList.add('rummage');
-    for (let i = 0; i < greetings.length; i++) {
-      throwWord(greetings[i], i);
-      await wait(i === 0 ? 1000 : 600);
-    }
-    await wait(400);
-    jim.classList.remove('diving');
-    stage.classList.remove('rummage');
-    jim.classList.add('air');
-    const r = rimPos();
-    await move([pos, { x: r.x, y: -85, r: 10, o: .55, e: 'ease-in' }, r], 620, 'ease-out');
-    jim.classList.remove('air');
-    jim.classList.add('idle');
-  }
-  async function intro() {
-    busy = true;
-    layout();
-    place({ x: -JW - 10, y: 0, r: 0 });
-    jim.classList.add('running');
-    await move([pos, { x: canX - JW + 6, y: 0, r: 0 }], 1700, 'cubic-bezier(.3,.5,.5,1)');
-    jim.classList.remove('running');
-    await wait(300);
-    await digIn();
-    busy = false;
-  }
-  jim.addEventListener('click', async () => {
-    if (busy || reduceMotion) return;
-    busy = true;
-    await digIn();
-    busy = false;
-  });
-  window.addEventListener('resize', () => { if (!busy) { layout(); place(rimPos()); } });
-
-  if (reduceMotion) {
-    layout(); place(rimPos()); jim.classList.add('idle');
-    lidOn = false; lid.style.transform = 'translate(-85px,57px) rotate(-360deg)';
-  } else {
-    setTimeout(intro, 500);
-  }
-</script>
+<script src="script.js"></script>
 </body>
 </html>
